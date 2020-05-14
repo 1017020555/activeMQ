@@ -18,23 +18,30 @@
 		http://activemq.apache.org/schema/core/activemq-core.xsd">
 
 <!--创建连接工厂	-->
-	<amq:connectionFactory id="amqConnectionFactory" userName="admin" password="admin" brokerURL="tcp://localhost:61616"/>
+	<amq:connectionFactory
+			id="amqConnectionFactory" userName="admin" password="admin" brokerURL="tcp://localhost:61616"/>
+
 <!--创建缓存连接工厂-->
 	<bean id="cachingConnectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+		<!--	注入连接工厂	-->
 		<property name="targetConnectionFactory" ref="amqConnectionFactory"></property>
+		<!--	缓存消息数据	-->
 		<property name="sessionCacheSize" value="5"></property>
 	</bean>
 
+<!--	点对点jmsTemplate-->
 	<bean id="jmsQueueTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<!--	注入缓存连接工厂	-->
 		<property name="connectionFactory" ref="cachingConnectionFactory"/>
+		<!--	是否为发布订阅模式	-->
 		<property name="pubSubDomain" value="false"></property>
 	</bean>
-
+<!--    发布订阅jmsTemplate-->
 	<bean id="jmsTopicTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<!--	注入缓存连接工厂	-->
 		<property name="connectionFactory" ref="cachingConnectionFactory"/>
+		<!--	注入缓存连接工厂	-->
 		<property name="pubSubDomain" value="true"></property>
 	</bean>
-	jms
-	spring整合activeMQ
-	springboot整合activeMQ
+
 </beans>
