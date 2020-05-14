@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jms_consumer/jms_consumer.iml" filepath="$PROJECT_DIR$/jms_consumer/jms_consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jms_productor/jms_productor.iml" filepath="$PROJECT_DIR$/jms_productor/jms_productor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_productor/spring_productor.iml" filepath="$PROJECT_DIR$/spring_productor/spring_productor.iml" />
+    </modules>
+  </component>
+</project>
