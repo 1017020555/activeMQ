@@ -3,12 +3,15 @@
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xmlns:jms="http://www.springframework.org/schema/jms"
 	   xmlns:amq="http://activemq.apache.org/schema/core"
+	   xmlns:context="http://www.springframework.org/schema/context"
 	   xsi:schemaLocation="http://activemq.apache.org/schema/core
 	    http://activemq.apache.org/schema/core/activemq-core.xsd
 		http://www.springframework.org/schema/jms
 		http://www.springframework.org/schema/jms/srping-jms.xsd
 		http://www.springframework.org/schema/beans
-		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
 
 <!--创建连接工厂	-->
 	<amq:connectionFactory id="amqConnectionFactory" userName="admin" password="admin" brokerURL="tcp://localhost:61616"/>
@@ -21,20 +24,16 @@
 		<property name="sessionCacheSize" value="5"></property>
 	</bean>
 
-<!--	点对点jmsTemplate-->
-	<bean id="jmsQueueTemplate" class="org.springframework.jms.core.JmsTemplate">
-		<!--	注入缓存连接工厂	-->
-		<property name="connectionFactory" ref="cachingConnectionFactory"/>
-		<!--	是否为发布订阅模式	-->
-		<property name="pubSubDomain" value="false"></property>
-	</bean>
+<!--	配置消息监听组件扫描-->
+	<context:component-scan base-package="com.lc.listener"/>
 
-<!--    发布订阅jmsTemplate-->
-	<bean id="jmsTopicTemplate" class="org.springframework.jms.core.JmsTemplate">
-		<!--	注入缓存连接工厂	-->
-		<property name="connectionFactory" ref="cachingConnectionFactory"/>
-		<!--	注入缓存连接工厂	-->
-		<property name="pubSubDomain" value="true"></property>
-	</bean>
+<!--	配置监听器    点对点 -->
+	<jms:listener-container connection-factory="cachingConnectionFactory" destination-type="queue">
+		<jms:listener destination="spring_queue" ref="queueListener"></jms:listener>
+	</jms:listener-container>
+<!--	配置监听器   发布订阅 -->
+	<jms:listener-container connection-factory="cachingConnectionFactory" destination-type="topic">
+		<jms:listener destination="spring_topic" ref="topicListener"></jms:listener>
+	</jms:listener-container>
 
 </beans>
