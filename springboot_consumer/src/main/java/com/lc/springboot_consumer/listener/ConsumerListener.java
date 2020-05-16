@@ -37,6 +37,19 @@ public class ConsumerListener {
             }catch (JMSException e){
                 e.printStackTrace();
             }
+        }else if(message instanceof StreamMessage){
+            try {
+                StreamMessage streamMessage=(StreamMessage)message;
+                boolean a = streamMessage.getBooleanProperty("a");
+                int b = streamMessage.getIntProperty("b");
+                System.out.println(a+"---"+b);
+
+                String test = message.getStringProperty("test");
+                System.out.println("test:"+test);
+
+            }catch (JMSException e){
+                e.printStackTrace();
+            }
         }
 
     }

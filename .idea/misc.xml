@@ -6,6 +6,9 @@
         <option value="$PROJECT_DIR$/jms_productor/pom.xml" />
         <option value="$PROJECT_DIR$/jms_consumer/pom.xml" />
         <option value="$PROJECT_DIR$/spring_productor/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_productor/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_consumer/pom.xml" />
       </list>
     </option>
   </component>

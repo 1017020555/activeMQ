@@ -4,7 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/jms_consumer/jms_consumer.iml" filepath="$PROJECT_DIR$/jms_consumer/jms_consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/jms_productor/jms_productor.iml" filepath="$PROJECT_DIR$/jms_productor/jms_productor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_consumer/spring_consumer.iml" filepath="$PROJECT_DIR$/spring_consumer/spring_consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_productor/spring_productor.iml" filepath="$PROJECT_DIR$/spring_productor/spring_productor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_consumer/springboot_consumer.iml" filepath="$PROJECT_DIR$/springboot_consumer/springboot_consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot_productor/springboot_productor.iml" filepath="$PROJECT_DIR$/springboot_productor/springboot_productor.iml" />
     </modules>
   </component>
 </project>
