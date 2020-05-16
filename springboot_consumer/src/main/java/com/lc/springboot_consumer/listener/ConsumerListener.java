@@ -4,6 +4,7 @@ import com.lc.springboot_consumer.pojo.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.jms.*;
 import java.util.Map;

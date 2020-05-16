@@ -9,8 +9,10 @@ import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.jms.*;
+import java.beans.Transient;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = SpringbootProductorApplication.class)
@@ -26,7 +28,11 @@ public class Productor {
 
     @Test
     public void send(){
-        jmsMessagingTemplate.convertAndSend(name,"queue");
+
+        for (int i=0;i<10;i++){
+            jmsMessagingTemplate.convertAndSend(name,"queue");
+        }
+
     }
 
 //    测试消息头：
