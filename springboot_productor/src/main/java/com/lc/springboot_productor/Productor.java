@@ -45,7 +45,7 @@ public class Productor {
         });
     }
 
-//  消息类型 map ,object ,
+//  消息类型 map ,object ,stream bytes
     @Test
     public void type(){
 
@@ -56,10 +56,17 @@ public class Productor {
 //                message.setInt("a",1);
 //                message.setString("b","map");
 
-                User user=new User();
-                user.setUsername("abc");
-                user.setPassword("123");
-                ObjectMessage message = session.createObjectMessage(user);
+//                User user=new User();
+//                user.setUsername("abc");
+//                user.setPassword("123");
+//                ObjectMessage message = session.createObjectMessage();
+//                message.setObject(user);
+
+                StreamMessage message = session.createStreamMessage();
+                message.setBooleanProperty("a",true);
+                message.setIntProperty("b",11);
+
+                message.setStringProperty("test","test");
 
                 return message;
             }
