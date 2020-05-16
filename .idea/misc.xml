@@ -9,6 +9,12 @@
         <option value="$PROJECT_DIR$/spring_consumer/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_productor/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/productor_tx/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_productor_tx/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_producer_tx/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_consumer_tx/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_producer_ack/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_consumer_ack/pom.xml" />
       </list>
     </option>
   </component>

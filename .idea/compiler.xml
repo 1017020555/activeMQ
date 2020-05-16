@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="jms_productor" />
         <module name="spring_consumer" />
+        <module name="springboot_consumer_ack" />
+        <module name="springboot_producer_ack" />
         <module name="jms_consumer" />
         <module name="springboot_productor" />
         <module name="springboot_consumer" />
@@ -17,16 +19,28 @@
     <bytecodeTargetLevel>
       <module name="jms_consumer" target="1.5" />
       <module name="jms_productor" target="1.5" />
+      <module name="productor_tx" target="1.8" />
       <module name="spring_consumer" target="1.5" />
       <module name="spring_productor" target="1.5" />
       <module name="springboot_consumer" target="1.8" />
+      <module name="springboot_consumer_ack" target="1.8" />
+      <module name="springboot_consumer_tx" target="1.8" />
+      <module name="springboot_producer_ack" target="1.8" />
+      <module name="springboot_producer_tx" target="1.8" />
       <module name="springboot_productor" target="1.8" />
+      <module name="springboot_productor_tx" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="productor_tx" options="-parameters" />
       <module name="springboot_consumer" options="-parameters" />
+      <module name="springboot_consumer_ack" options="-parameters" />
+      <module name="springboot_consumer_tx" options="-parameters" />
+      <module name="springboot_producer_ack" options="-parameters" />
+      <module name="springboot_producer_tx" options="-parameters" />
       <module name="springboot_productor" options="-parameters" />
+      <module name="springboot_productor_tx" options="-parameters" />
     </option>
   </component>
 </project>
